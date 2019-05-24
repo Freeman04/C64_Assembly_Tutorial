@@ -1,0 +1,10 @@
+; Hello World
+;
+; Most initial programing tutorials start with you putting hello world on the screen.
+; This is not that.  This doesn't actually do anything at all, but is worth looking at
+; so that you recognize the ";" is the way to make a comment in CBM prg Studio.  Without
+; that, you might think something to the right of a ; is required to make the program function.
+;
+; It isn't.
+;
+; Addtionally, an actual "Hello World" will require a few steps to get there.
