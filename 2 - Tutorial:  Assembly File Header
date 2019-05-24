@@ -1,13 +1,26 @@
-*=$0801         ; This is the starting memory address for the program.  
+;       At the top of Assembly programs you will usually see the following code, or something that looks like it.
+;- -------------------------------------------------------------------------------
+
+*=$0801         
 
         BYTE    $0E, $08, $0A, $00, $9E, $20, $28,  $32, $33, $30, $34, $29, $00, $00, $00
 
-*=$0900         ; This is the memory location where the rest of the program will start working from
-                ; once it begins running.
+*=$0900         
+
+; ---------------------------------------------------------------------------------
+                ; The purpose of this snippet is to typein the command:  10 SYS (2304).
+                ; Since Commodore 64 uses basic as it's interface, what's happening here
+                ; is that you're instructing the machine to start running commands stored
+                ; in it's memory beginning at address $0900.
                 ;
-                ; Calling SYS 2304 will start the computer working at Memory register $0900
+                ; There will be more about addresses in the next tutorial.  Right now we just want to 
+                ; break out what's happening in this 3 lines of code.
+                
+                ; *=$0801         
 
                 ; The address 0801 is the beginning of where basic begins opperating code.
+                ; You can not start this code at any other address.  Not $0800 or $0802.  To
+                ; enter this command in basic, you must start at $0801.
                 ;
                 ;  What the line of BYTE data is doing, is keying in the basic command:
                 ;
@@ -24,3 +37,13 @@
                 ; $30 = 0
                 ; $34 = 4
                 ; $29 = )
+                ; $00 = New Line
+                ; $00 = End Code
+                ; $00 = Extra
+                ;
+                ; Following the BYTE data, is the line:
+                ;
+                ; *=0900
+                ; 
+                ; This is the nubmer 2304 represents in hex, and is where your code will start from
+                ; when you begin typing it into the assembler.
