@@ -1,0 +1,26 @@
+*=$0801         ; This is the starting memory address for the program.  
+
+        BYTE    $0E, $08, $0A, $00, $9E, $20, $28,  $32, $33, $30, $34, $29, $00, $00, $00
+
+*=$0900         ; This is the memory location where the rest of the program will start working from
+                ; once it begins running.
+                ;
+                ; Calling SYS 2304 will start the computer working at Memory register $0900
+
+                ; The address 0801 is the beginning of where basic begins opperating code.
+                ;
+                ;  What the line of BYTE data is doing, is keying in the basic command:
+                ;
+                ;  10 SYS (2304)
+                ;
+                ; $OA = 10  <- In basic each line needs a number to work.
+                ;
+                ; $9E = SYS <- In this case it's the whole command, not seperate numbers
+                ; 
+                ; $20 = space
+                ; $28 = (
+                ; $32 = 2
+                ; $33 = 3
+                ; $30 = 0
+                ; $34 = 4
+                ; $29 = )
