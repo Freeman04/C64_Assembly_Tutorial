@@ -26,9 +26,17 @@
                 ;
                 ;  10 SYS (2304)
                 ;
+                ; $0e
+                ; $08 <- These two bytes represent the length of the command that follows by 
+                ;        telling it where the last byte in the command is stored.
+                ;
+                ;        I'm not able to be sure if they need to 'accurately' represent the size of the 
+                ;        basic command as changing the numbers to anything but $00 doesn't seem to 
+                ;        break the program in my tests.  I'll edit this if I find different.
+                ;
                 ; $OA = 10  <- In basic each line needs a number to work.
                 ;
-                ; $9E = SYS <- In this case it's the whole command, not seperate numbers
+                ; $9E = SYS <- In this case it's the whole command, not seperate numbers/letters
                 ; 
                 ; $20 = space
                 ; $28 = (
